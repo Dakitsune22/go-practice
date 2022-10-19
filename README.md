@@ -1,2 +1,2 @@
 # go-practice
-Go language learning practices
+Go language learning practices, by Dak.
