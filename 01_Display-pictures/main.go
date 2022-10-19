@@ -25,7 +25,9 @@ func main() {
 	http.Handle("/favicon.ico", http.NotFoundHandler())
 	// Add route to serve pictures:
 	http.Handle("/public/", http.StripPrefix("/public", http.FileServer(http.Dir("./public"))))
-	http.ListenAndServe(":8080", nil)
+	port := os.Getenv("PORT")
+	log.Println("*** Listening port:", port, " ***")
+	http.ListenAndServe(":"+port, nil)
 }
 
 func index(rw http.ResponseWriter, req *http.Request) {
